@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+class Solution {
+    public int maximumProduct(int[] nums) {
+        // Edge case: If there are less than 3 numbers, the product cannot be calculated
+        if (nums.length < 3) {
+            throw new IllegalArgumentException("Array must contain at least three numbers.");
+        }
+        
+        // Sort the array
+        Arrays.sort(nums);
+        
+        // The length of the array
+        int n = nums.length;
+        
+        // Calculate the product of the three largest numbers
+        int product1 = nums[n - 1] * nums[n - 2] * nums[n - 3];
+        
+        // Calculate the product of the two smallest numbers and the largest number
+        int product2 = nums[0] * nums[1] * nums[n - 1];
+        
+        // Return the maximum of the two products
+        return Math.max(product1, product2);
+    }
+}
