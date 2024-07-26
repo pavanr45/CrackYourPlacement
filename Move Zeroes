@@ -1,0 +1,18 @@
+public class Solution {
+    public void moveZeroes ( int[] nums) {
+        int nonZeroeIndex = 0;
+
+        for (int i=0 ; i<nums.length; i++){
+            if(nums[i] !=0){
+                nums[nonZeroeIndex++]= nums[i];
+            }
+        }
+
+        for (int i =nonZeroeIndex; i<nums.length; i++){
+            nums[i]=0;
+        }
+
+
+
+    }
+}
